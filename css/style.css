@@ -139,3 +139,9 @@ footer {
   background-color: #e0d5c1;
   font-size: 0.9em;
 }
+
+
+.media-card img {
+  max-width: 100%;
+  height: auto;
+}
