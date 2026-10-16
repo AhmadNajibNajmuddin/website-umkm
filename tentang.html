@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <a href="#main-content" class="skip-link">Lanjut ke konten utama</a>
+    <a class="skip-link" href="#konten">Lewati ke konten utama</a>
 
-    <header>
-      <nav aria-label="Navigasi utama">
+    <header class="site-header">
+      <nav class="nav" aria-label="Navigasi utama">
+        <a class="brand" href="index.html">Kopi Nusa</a>
         <ul>
           <li><a href="index.html">Beranda</a></li>
           <li><a href="tentang.html" aria-current="page" class="active">Tentang Kami</a></li>
@@ -21,11 +22,16 @@
       </nav>
     </header>
 
-    <main id="main-content" class="page">
+    <main id="konten" class="page">
       <section aria-labelledby="tentang-title">
         <h1 id="tentang-title">Tentang Kopi Nusa</h1>
         <p>Kopi Nusa bermula dari kecintaan kami terhadap biji kopi lokal nusantara. Berdiri di Pekalongan, kami berkomitmen untuk menyajikan pengalaman minum kopi yang otentik, memberdayakan petani lokal, dan menjadi ruang diskusi yang hangat bagi masyarakat.</p>
-        
+
+        <figure class="media-card">
+          <img src="assets/images/tim-kopi.jpg" alt="Tiga barista Kopi Nusa berdiri di area bar membawa portafilter dan teko seduh" />
+          <figcaption>Tim barista Kopi Nusa yang siap menyajikan racikan kopi terbaik dengan penuh dedikasi untuk Anda.</figcaption>
+        </figure>
+
         <h2>Nilai-Nilai Kami</h2>
         <ul>
           <li><strong>Lokal & Otentik:</strong> 100% menggunakan biji kopi dari petani Indonesia.</li>
@@ -35,7 +41,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
       <p>&copy; 2026 Kopi Nusa Pekalongan. Hak Cipta Dilindungi.</p>
     </footer>
   </body>
