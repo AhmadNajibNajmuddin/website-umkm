@@ -116,9 +116,16 @@ footer p {
   padding-block: var(--space-5);
 }
 
+.nav {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: space-between;
+}
+
 .brand {
   display: inline-block;
-  margin-bottom: var(--space-2);
+  margin-bottom: 0;
   color: var(--color-text);
   font-size: 1.25rem;
   font-weight: 800;
@@ -129,11 +136,14 @@ footer p {
   padding: 0;
   margin: 0;
   list-style: none;
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
 }
 
 .nav li {
   display: inline-block;
-  margin: 0 var(--space-2) var(--space-1) 0;
+  margin: 0;
 }
 
 .nav ul a {
@@ -194,6 +204,10 @@ li {
   color: var(--color-surface);
   background: var(--color-primary);
   border-radius: var(--radius-lg);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-4);
+  align-items: center;
 }
 
 .hero .eyebrow {
@@ -201,23 +215,27 @@ li {
 }
 
 .hero-image {
-  margin-bottom: var(--space-3);
-  border-radius: var(--radius-sm);
+  width: 100%;
+  margin-bottom: 0;
+  border-radius: var(--radius-md);
 }
 
-button {
+button,
+.button {
   display: inline-block;
   padding: var(--space-2) var(--space-3);
   color: var(--color-surface);
   font: inherit;
   font-weight: 700;
+  text-decoration: none;
   cursor: pointer;
   background: var(--color-primary);
   border: 0;
   border-radius: var(--radius-sm);
 }
 
-button:hover {
+button:hover,
+.button:hover {
   color: var(--color-surface);
   background: var(--color-primary-strong);
 }
@@ -244,6 +262,7 @@ button:hover {
 
 .info-card,
 .media-card,
+.product-card,
 table,
 form {
   margin-block: var(--space-3);
@@ -285,6 +304,60 @@ figure {
 figcaption,
 caption {
   color: var(--color-muted);
+}
+
+.product-grid,
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.gallery-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: calc(var(--space-5) + var(--space-2));
+}
+
+.product-card h3,
+.product-card p {
+  margin-block: 0;
+}
+
+.product-grid .product-card,
+.gallery-grid .media-card {
+  margin-block: 0;
+}
+
+.product-badge {
+  position: absolute;
+  inset-block-start: var(--space-2);
+  inset-inline-end: var(--space-2);
+  padding: 0.25rem var(--space-2);
+  color: var(--color-primary-strong);
+  font-size: 0.875rem;
+  font-weight: 800;
+  background: var(--color-accent-soft);
+  border-radius: var(--radius-pill);
+}
+
+.price {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.card-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: auto;
 }
 
 table {
@@ -370,4 +443,44 @@ fieldset label {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.form-grid .field,
+.form-grid fieldset {
+  margin: 0;
+}
+
+.form-grid fieldset {
+  min-width: 0;
+}
+
+.field-wide {
+  grid-column: 1 / -1;
+}
+
+.option-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+}
+
+.option-list label {
+  margin-bottom: 0;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.form-actions .field-help {
+  margin: 0;
 }
