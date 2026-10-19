@@ -11,7 +11,12 @@
     <header class="site-header">
       <nav class="nav" aria-label="Navigasi utama">
         <a class="brand" href="index.html">Kopi Nusa</a>
-        <ul>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-controls="menu-utama" />
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+          <span>Menu</span>
+        </label>
+        <ul id="menu-utama" class="nav-links">
           <li><a href="index.html">Beranda</a></li>
           <li><a href="tentang.html">Tentang Kami</a></li>
           <li><a href="produk.html" aria-current="page" class="active">Produk</a></li>

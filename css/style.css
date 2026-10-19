@@ -11,6 +11,8 @@
   --color-accent: #ffd166;
   --color-accent-strong: #ffb703;
   --color-accent-soft: #fef3c7;
+  --color-tint: #f4ebe2;
+  --color-tint-strong: #ebdfd2;
   --color-on-accent: #2f2118;
 
   --space-1: 0.5rem;
@@ -122,9 +124,10 @@ footer p {
 
 .nav {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: var(--space-3);
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .brand {
@@ -137,13 +140,95 @@ footer p {
 }
 
 .nav ul {
+  display: none;
+  flex-direction: column;
+  flex-basis: 100%;
+  gap: var(--space-2);
   padding: 0;
   margin: 0;
   list-style: none;
-  display: flex;
-  flex-direction: column;
+}
+
+/* Hamburger menu tanpa JavaScript: checkbox tersembunyi + label + selector :checked */
+.nav-toggle-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.nav-toggle-label {
+  display: inline-flex;
+  align-items: center;
   gap: var(--space-2);
-  flex-wrap: wrap;
+  min-height: 2.75rem;
+  padding: var(--space-1) var(--space-3);
+  color: var(--color-text);
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+}
+
+.nav-toggle-label:hover,
+.nav-toggle-input:checked + .nav-toggle-label {
+  background: var(--color-tint);
+}
+
+.nav-toggle-input:focus-visible + .nav-toggle-label {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.nav-toggle-input:checked ~ .nav-links {
+  display: flex;
+}
+
+.nav-toggle-icon,
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background: currentcolor;
+  border-radius: 2px;
+}
+
+.nav-toggle-icon {
+  position: relative;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  position: absolute;
+  left: 0;
+  content: "";
+}
+
+.nav-toggle-icon::before {
+  top: -0.4rem;
+}
+
+.nav-toggle-icon::after {
+  top: 0.4rem;
+}
+
+.nav-toggle-input:checked + .nav-toggle-label .nav-toggle-icon {
+  background: transparent;
+}
+
+.nav-toggle-input:checked + .nav-toggle-label .nav-toggle-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle-input:checked + .nav-toggle-label .nav-toggle-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
 }
 
 .nav li {
@@ -167,7 +252,7 @@ footer p {
 
 .nav a[aria-current="page"] {
   color: var(--color-primary-strong);
-  background: var(--color-accent-soft);
+  background: var(--color-tint);
   border-radius: var(--radius-pill);
 }
 
@@ -502,10 +587,6 @@ fieldset label {
 }
 
 @media (min-width: 42rem) {
-  .nav ul {
-    flex-direction: row;
-  }
-
   .gallery-grid,
   .form-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -524,9 +605,18 @@ fieldset label {
 
 @media (min-width: 60rem) {
   .nav {
+    flex-wrap: nowrap;
+  }
+
+  .nav ul {
+    display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-basis: auto;
+  }
+
+  .nav-toggle-label {
+    display: none;
   }
 
   .product-grid {

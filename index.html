@@ -7,12 +7,17 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <a href="#main-content" class="skip-link">Lanjut ke konten utama</a>
+    <a class="skip-link" href="#konten">Lewati ke konten utama</a>
 
     <header class="site-header">
       <nav class="nav" aria-label="Navigasi utama">
         <a class="brand" href="index.html">Kopi Nusa</a>
-        <ul>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-controls="menu-utama" />
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+          <span>Menu</span>
+        </label>
+        <ul id="menu-utama" class="nav-links">
           <li><a href="index.html" aria-current="page" class="active">Beranda</a></li>
           <li><a href="tentang.html">Tentang Kami</a></li>
           <li><a href="produk.html">Produk</a></li>
@@ -23,7 +28,7 @@
       </nav>
     </header>
 
-    <main id="main-content" class="page">
+    <main id="konten" class="page">
       <section class="hero">
         <div class="hero-content">
           <p class="eyebrow">UMKM Pekalongan</p>
@@ -69,7 +74,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
       <p>&copy; 2026 Kopi Nusa Pekalongan. Hak Cipta Dilindungi.</p>
     </footer>
 
