@@ -149,7 +149,6 @@ footer p {
   list-style: none;
 }
 
-/* Hamburger menu tanpa JavaScript: checkbox tersembunyi + label + selector :checked */
 .nav-toggle-input {
   position: absolute;
   width: 1px;
@@ -584,6 +583,66 @@ fieldset label {
 
 .form-actions .field-help {
   margin: 0;
+}
+
+.js-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-4);
+  margin-block: var(--space-4);
+}
+
+.js-product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  padding-top: calc(var(--space-5) + var(--space-2));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.js-product-card h3 {
+  margin-block: 0;
+  color: var(--color-text);
+  padding-right: 4rem;
+}
+
+.category-note {
+  margin-block: 0;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.stock-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-block-start: var(--space-1);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: #dcfce7;
+  color: #166534;
+}
+
+.stock-badge.warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.stock-badge.empty {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.order-note {
+  margin-block-end: 0;
+  font-weight: 700;
+  color: var(--color-primary);
 }
 
 @media (min-width: 42rem) {
